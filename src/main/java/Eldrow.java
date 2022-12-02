@@ -61,8 +61,6 @@ public class Eldrow {
             break;
         }
 
-
-
     }
 
     private void printTitleCard() {
@@ -261,7 +259,6 @@ public class Eldrow {
         }
         return output;
     }
-
 
     private void promptForReturn() {
         System.out.println("Press RETURN to continue.");
