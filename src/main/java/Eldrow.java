@@ -294,7 +294,7 @@ public class Eldrow {
     }
 
     private void displayPastResults(){
-        String filePath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
+        String filePath = "resultsLog.txt";
         File logFile = new File(filePath);
         try (Scanner fileInput = new Scanner(logFile)) {
             while (fileInput.hasNextLine()) {
