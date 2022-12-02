@@ -301,13 +301,13 @@ public class Eldrow {
 
     private void displayPastResults(){
         String filePath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
-        File bookFile = new File(filePath);
-        try (Scanner fileInput = new Scanner(bookFile)) {
+        File logFile = new File(filePath);
+        try (Scanner fileInput = new Scanner(logFile)) {
             while (fileInput.hasNextLine()) {
                 System.out.println(fileInput.nextLine());
             }
         }catch (FileNotFoundException fnfe) {
-            System.out.println("The file was not found: " + bookFile.getAbsolutePath());
+            System.out.println("The file was not found: " + logFile.getAbsolutePath());
         }
     }
 
