@@ -272,7 +272,6 @@ public class Eldrow {
         String strDate = dateFormat.format(date);
         String auditPath = "resultsLog.txt";
         File logFile = new File(auditPath);
-        // Using a FileOutputStream with true passed into the constructor opens the file for append.
         try (PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
             log.println("Successful in " + guessCount + " guesses on " + strDate);
         } catch (
@@ -287,7 +286,6 @@ public class Eldrow {
         String strDate = dateFormat.format(date);
         String auditPath = "resultsLog.txt";
         File logFile = new File(auditPath);
-        // Using a FileOutputStream with true passed into the constructor opens the file for append.
         try (PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
             log.println("Unsuccessful on " + strDate);
         } catch (FileNotFoundException e) {
