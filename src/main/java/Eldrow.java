@@ -270,10 +270,10 @@ public class Eldrow {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
-        String auditPath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
+        String auditPath = "resultsLog.txt";
         File logFile = new File(auditPath);
-        try (
-                PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
+        // Using a FileOutputStream with true passed into the constructor opens the file for append.
+        try (PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
             log.println("Successful in " + guessCount + " guesses on " + strDate);
         } catch (
                 FileNotFoundException fnfe) {
@@ -285,13 +285,12 @@ public class Eldrow {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
-        String auditPath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
+        String auditPath = "resultsLog.txt";
         File logFile = new File(auditPath);
-        try (
-                PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
+        // Using a FileOutputStream with true passed into the constructor opens the file for append.
+        try (PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
             log.println("Unsuccessful on " + strDate);
-        } catch (
-                FileNotFoundException fnfe) {
+        } catch (FileNotFoundException e) {
             System.out.println("*** Unable to open log file: " + logFile.getAbsolutePath());
         }
     }
