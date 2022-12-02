@@ -43,6 +43,16 @@ public class WordList {
                 "BRACE",
                 "BOINK",
                 "BRAVE",
+                "CRAZY",
+                "COUNT",
+                "CRIMP",
+                "CREST",
+                "CHEST",
+                "CACHE",
+                "DRUNK",
+                "DRINK",
+                "DRAIN",
+                "DUNCE",
         };
     }
 }

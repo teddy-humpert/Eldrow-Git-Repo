@@ -46,13 +46,14 @@ public class Eldrow {
                 playSinglePlayer(playWordSplit, playWord);
             }
             if (mainMenuSelection == 2) {
-                playTwoPlayer();
+//                playTwoPlayer();
+                break;
             }
             if (mainMenuSelection == 3) {
-
+                displayPastResults();
             }
             if (mainMenuSelection == 0) {
-
+                break;
             }
             break;
         }
@@ -276,7 +277,7 @@ public class Eldrow {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
-        String auditPath = "C:\\Users\\Student\\teddyCode\\projects\\Eldrow\\src\\main\\resources\\resultsLog.txt";
+        String auditPath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
         File logFile = new File(auditPath);
         try (
                 PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
@@ -291,7 +292,7 @@ public class Eldrow {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
-        String auditPath = "C:\\Users\\Student\\teddyCode\\projects\\Eldrow\\src\\main\\resources\\resultsLog.txt";
+        String auditPath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
         File logFile = new File(auditPath);
         try (
                 PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
@@ -299,6 +300,18 @@ public class Eldrow {
         } catch (
                 FileNotFoundException fnfe) {
             System.out.println("*** Unable to open log file: " + logFile.getAbsolutePath());
+        }
+    }
+
+    private void displayPastResults(){
+        String filePath = "C:\\Users\\Student\\teddyCode\\Edlrow-Git-Repo\\target\\classes\\resultsLog.txt";
+        File bookFile = new File(filePath);
+        try (Scanner fileInput = new Scanner(bookFile)) {
+            while (fileInput.hasNextLine()) {
+                System.out.println(fileInput.nextLine());
+            }
+        }catch (FileNotFoundException fnfe) {
+            System.out.println("The file was not found: " + bookFile.getAbsolutePath());
         }
     }
 
