@@ -8,9 +8,12 @@ import java.util.*;
 import java.util.Date;
 import java.util.Scanner;
 
-
-// things that still need fixed: the rerun if guess isn't the right length -- resets counts.
-// display past results
+//print main menu
+//one player or two player
+//prompt for first guess
+//loop until guess is correct
+//print results
+//log results
 
 public class Eldrow {
 
@@ -36,7 +39,7 @@ public class Eldrow {
         Collections.shuffle(dataset);
         String playWord = dataset.get(0).toUpperCase();
         char[] playWordSplit = playWord.toCharArray();
-//        System.out.println(dataset.get(0) + " preWhile");
+//                                                                                                                      System.out.println(dataset.get(0) + " preWhile");
 
         while (true) {
             printTitleCard();
@@ -58,13 +61,6 @@ public class Eldrow {
             break;
         }
 
-
-        //print main menu
-        //one player or two player
-        //prompt for first guess
-        //loop until guess is correct
-        //print results
-        //log results
 
 
     }
@@ -97,8 +93,8 @@ public class Eldrow {
             if (playerGuess.length() != 5) {
                 System.out.println("Guess must be 5 characters.");
                 System.out.println("You've made " + guessCount + " guess(es) so far.");
-//                break;
-//                playSinglePlayer(playWordSplit, playWord);
+//                                                                                                                      break;
+//                                                                                                                      playSinglePlayer(playWordSplit, playWord);
                 continue;
             }
             resultString = checkGuessVsPlayWord(playerGuess, playWord);
@@ -136,13 +132,13 @@ public class Eldrow {
         int nearCount = 0;
         String nearString = "";
 
-        // so the issue here is that if there's a word with more than one of a single letter
-        // it will 'print' problematically
-        // feel like i need to map word first, and get values of each letter.
+                                                                                                                        // so the issue here is that if there's a word with more than one of a single letter
+                                                                                                                        // it will 'print' problematically
+                                                                                                                        // feel like i need to map word first, and get values of each letter.
         Map<Character, Integer> playWordMap = WordMap(playWord);
         Map<Character, Integer> guessWordMap = WordMap(playerGuess);
-        // so now with the near stuff it's a matter of testing maps against each other.
-        // i think i need to build a map as i go
+                                                                                                                        // so now with the near stuff it's a matter of testing maps against each other.
+                                                                                                                         // i think i need to build a map as i go
         Map<Character, Integer> buildingMap = new HashMap<>();
         for (int i = 0; i < playerGuessArray.length; i++) {
             char guessLetter = playerGuessArray[i];
@@ -195,7 +191,7 @@ public class Eldrow {
             if (playerGuessArray[i] != playWordArray[i] &&
                     (new String(playWordArray).indexOf(playerGuessArray[i]) > -1)) {
                 nearCount++;
-                // ok but then do i need to make another map and compare the two?
+                                                                                                                        // ok but then do i need to make another map and compare the two?
             }
             if (playerGuessArray[i] != playWordArray[i] &&
                     (new String(playWordArray).indexOf(playerGuessArray[i]) < 0)) {
@@ -249,7 +245,7 @@ public class Eldrow {
     }
 
     public Map<Character, Integer> WordMap(String word) {
-        //idea here is to generate a map that can be used to test existence of letters in guess.
+                                                                                                                        //idea here is to generate a map that can be used to test existence of letters in guess.
         List<Character> wordSplit = new ArrayList<>();
         for (int i = 0; i < word.length(); i++) {
             wordSplit.add(word.charAt(i));
