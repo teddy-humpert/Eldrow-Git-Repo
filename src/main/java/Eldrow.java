@@ -39,7 +39,6 @@ public class Eldrow {
         Collections.shuffle(dataset);
         String playWord = dataset.get(0).toUpperCase();
         char[] playWordSplit = playWord.toCharArray();
-//                                                                                                                      System.out.println(dataset.get(0) + " preWhile");
 
         while (true) {
             printTitleCard();
@@ -72,7 +71,7 @@ public class Eldrow {
 
     private void printMainMenu() {
         System.out.println("1: Play One Player Game");
-        System.out.println("2: Play Two Player Game");
+//        System.out.println("2: Play Two Player Game");
         System.out.println("3: Display Past Results");
         System.out.println("0: Exit");
         System.out.println();
